@@ -11,8 +11,13 @@ import org.springframework.stereotype.Component;
 @Component
 public class Listener {
 
-    /*@RabbitListener(queues = "topic_message_1")
+    @RabbitListener(queues = "topic_message_1")
     public void receiver(String s) {
-        System.out.println("接受：" + s);
-    }*/
+        System.out.println("接受topic_1：" + s);
+    }
+
+    @RabbitListener(queues = "topic_message_2")
+    public void receiver2(String s){
+        System.out.println("接受topic_2："+s);
+    }
 }
